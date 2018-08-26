@@ -1,9 +1,6 @@
 package com.tenkaten.recipes.recipesdemo.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 public class Ingredient {
@@ -17,6 +14,9 @@ public class Ingredient {
 
     @ManyToOne
     private Recipe recipe;
+
+    @OneToOne
+    private UnitOfMeasure unitOfMeasure;
 
     public Long getId() {
         return id;
@@ -48,5 +48,13 @@ public class Ingredient {
 
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
+    }
+
+    public UnitOfMeasure getUnitOfMeasure() {
+        return unitOfMeasure;
+    }
+
+    public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
+        this.unitOfMeasure = unitOfMeasure;
     }
 }
