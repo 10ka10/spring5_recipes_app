@@ -3,6 +3,7 @@ package com.tenkaten.recipes.recipesdemo.model;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
 public class Ingredient {
 
     @Id
